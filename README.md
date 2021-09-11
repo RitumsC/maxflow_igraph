@@ -27,7 +27,7 @@ The outputfile will have following structure:
 ```
 mu_i cells_filled_at_mu_i
 mu_2 ...
-.._f
-mu_f cells_filed_at_mu_f
+...
+... # will end with mu value before mu_f, but has the same filling as mu_f.
 ```
 for example look refer to test_network.dat and test.out files.
