@@ -57,10 +57,9 @@ main(int argc, char **argv){
 
   /*  Argument list   */
   char *fname = argv[1];
-  char *oname = argv[2];
-  double y    = atof(argv[3]);
-  double mu_i  = atof(argv[4]);
-  double mu_f  = atof(argv[5]);
+  double y    = atof(argv[2]);
+  double mu_i  = atof(argv[3]);
+  double mu_f  = atof(argv[4]);
 
   /* Main code */
   igraph_vector_t weights;
@@ -74,8 +73,9 @@ main(int argc, char **argv){
   igraph_vector_destroy(&weights);
 
   end_t = clock();
+#if DEBUG
   printf("Total CPU time: %fs\n", (double)(end_t-start_t)/ CLOCKS_PER_SEC);
-
+#endif
   return 0;
 }
 
@@ -169,9 +169,10 @@ make_graph(const char *fname, const double y, igraph_vector_t *weights){
   fclose(read);
   
   end_graph_t = clock();
+#if DEBUG
   printf("Read in graph time: %fs\n", (double)(end_graph_t-start_graph_t)/
 	 CLOCKS_PER_SEC);
-  
+#endif
   return graph;
 }
 
