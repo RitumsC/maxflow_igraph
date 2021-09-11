@@ -1,7 +1,7 @@
 # Maxflow for ground-state lattice filling implementation with igraph
 This is pure c implementation of maxflow code to calculate ground-state lattice filling in porpus networks. Code mostly was written as a practice.
 
-For igraph librayry refer to https://igraph.org/.
+For igraph library refer to https://igraph.org/.
 
 ## Compile with (tested with igraph-0.8.3)
     gcc main.c -I/usr/local/include/igraph -L/usr/local/lib -ligraph -o maxflow
