@@ -8,7 +8,7 @@ For igraph library refer to https://igraph.org/.
 
 ## Usage example
 
-    ./maxflow network_file output_file wettability mu_initial mu_final
+    ./maxflow network_file wettability mu_initial mu_final > output_file
 
 e.g. 
 
@@ -17,16 +17,16 @@ e.g.
 The network_file should have following structure
 ```
 Number_of_cells Coordination_number
-0 list of adjacent cells
-1 2 3 20
-2 3 0 6 7
+0 Number_of_neigbouring neighbour_list
+1 3 2 3 20
+2 4 3 0 6 7
 ...
 21 2 17 18
 ```
 The outputfile will have following structure:
 ```
-mu_i cells_filled_at_mu_i
-mu_2 ...
+mu_i, cells_filled_at_mu_i
+mu_2, ...
 ...
 ... # will end with mu value before mu_f, but has the same filling as mu_f.
 ```
